@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["ExpoScreenshotGuardModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.screenshotguard.ExpoScreenshotGuardModule"]
+  }
+}

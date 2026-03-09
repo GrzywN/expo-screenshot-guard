@@ -12,4 +12,7 @@ class ExpoScreenshotGuardModule extends NativeModule<ExpoScreenshotGuardModuleEv
   }
 }
 
-export default registerWebModule(ExpoScreenshotGuardModule, 'ExpoScreenshotGuardModule');
+export default registerWebModule(
+  ExpoScreenshotGuardModule,
+  'ExpoScreenshotGuardModule'
+);

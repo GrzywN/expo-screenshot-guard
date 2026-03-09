@@ -9,4 +9,6 @@ declare class ExpoScreenshotGuardModule extends NativeModule<ExpoScreenshotGuard
 }
 
 // This call loads the native module object from the JSI.
-export default requireNativeModule<ExpoScreenshotGuardModule>('ExpoScreenshotGuard');
+export default requireNativeModule<ExpoScreenshotGuardModule>(
+  'ExpoScreenshotGuard'
+);

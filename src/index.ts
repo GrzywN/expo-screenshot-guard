@@ -2,4 +2,4 @@
 // and on native platforms to ExpoScreenshotGuardModule.ts
 export { default } from './ExpoScreenshotGuardModule';
 export { default as ExpoScreenshotGuardView } from './ExpoScreenshotGuardView';
-export * from  './ExpoScreenshotGuard.types';
+export * from './ExpoScreenshotGuard.types';

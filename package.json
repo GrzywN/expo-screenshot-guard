@@ -15,9 +15,11 @@
   "scripts": {
     "build": "expo-module build",
     "clean": "expo-module clean",
+    "format": "prettier src/ --write",
     "lint": "expo-module lint",
-    "test": "expo-module test",
-    "prepare": "expo-module prepare",
+    "typecheck": "expo-module tsc --noEmit",
+    "test": "CI=true expo-module test",
+    "prepare": "expo-module prepare && husky",
     "prepublishOnly": "expo-module prepublishOnly",
     "expo-module": "expo-module",
     "open:ios": "xed example/ios",
@@ -37,10 +39,20 @@
   "license": "MIT",
   "homepage": "https://github.com/GrzywN/expo-screenshot-guard#readme",
   "devDependencies": {
+    "@eslint/js": "9.39.4",
     "@types/react": "19.2.14",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.0.1",
+    "eslint-plugin-react-native": "5.0.0",
     "expo": "55.0.5",
     "expo-module-scripts": "55.0.2",
-    "react-native": "0.84.1"
+    "globals": "17.4.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.3.2",
+    "prettier": "3.8.1",
+    "react-native": "0.84.1",
+    "typescript-eslint": "8.56.1"
   },
   "peerDependencies": {
     "expo": "*",

@@ -1,5 +1,4 @@
-// Reexport the native module. On web, it will be resolved to ExpoScreenshotGuardModule.web.ts
-// and on native platforms to ExpoScreenshotGuardModule.ts
-export { default } from './ExpoScreenshotGuardModule';
-export { default as ExpoScreenshotGuardView } from './ExpoScreenshotGuardView';
-export * from './ExpoScreenshotGuard.types';
+export { useScreenshotGuard } from './useScreenshotGuard';
+export type { ScreenshotGuardOptions } from './useScreenshotGuard';
+export { default as ExpoScreenshotGuardModule } from './ExpoScreenshotGuardModule';
+export type { ExpoScreenshotGuardModuleEvents } from './ExpoScreenshotGuard.types';

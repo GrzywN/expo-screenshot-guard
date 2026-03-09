@@ -1,18 +1,22 @@
-import { registerWebModule, NativeModule } from 'expo';
+import { NativeModule, registerWebModule } from 'expo';
 
 import { ExpoScreenshotGuardModuleEvents } from './ExpoScreenshotGuard.types';
 
 class ExpoScreenshotGuardModule extends NativeModule<ExpoScreenshotGuardModuleEvents> {
-  PI = Math.PI;
-  async setValueAsync(value: string): Promise<void> {
-    this.emit('onChange', { value });
+  async enableProtectionAsync(): Promise<void> {
+    // Web: no-op — browser APIs do not support screenshot prevention
   }
-  hello() {
-    return 'Hello world! 👋';
+
+  async disableProtectionAsync(): Promise<void> {
+    // Web: no-op
+  }
+
+  isProtectionEnabled(): boolean {
+    return false;
   }
 }
 
 export default registerWebModule(
   ExpoScreenshotGuardModule,
-  'ExpoScreenshotGuardModule'
+  'ExpoScreenshotGuard'
 );

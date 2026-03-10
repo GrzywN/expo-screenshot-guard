@@ -1,6 +1,6 @@
 import { useScreenshotGuard } from 'expo-screenshot-guard';
 import { useState } from 'react';
-import { Button, ScrollView, Text, View } from 'react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
@@ -21,10 +21,13 @@ export default function App() {
                 {isProtected ? 'ENABLED' : 'DISABLED'}
               </Text>
             </Text>
-            <Button
-              title={isProtected ? 'Disable Protection' : 'Enable Protection'}
-              onPress={() => setIsProtected((prev) => !prev)}
-            />
+            <Pressable
+              style={styles.button}
+              onPress={() => setIsProtected((prev) => !prev)}>
+              <Text style={styles.buttonText}>
+                {isProtected ? 'Disable Protection' : 'Enable Protection'}
+              </Text>
+            </Pressable>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -54,5 +57,17 @@ const styles = {
   container: {
     flex: 1,
     backgroundColor: '#eee',
+  },
+  button: {
+    backgroundColor: '#007AFF',
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    alignItems: 'center' as const,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold' as const,
   },
 };
